@@ -1,0 +1,54 @@
+8
+
+dir
+1297
+svn://conscientia.net/Matec/DBExtractEntities/lib
+svn://conscientia.net/Matec
+
+
+
+2008-02-05T09:38:21.559456Z
+1089
+franky
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+86f1b055-2d32-0410-987d-f11464d2316f
+
+mysql-connector-java-5.0.5-bin.jar
+file
+
+
+
+
+2008-05-31T16:24:22.000000Z
+873b57f166834d14a083004eb32836fc
+2007-06-06T15:51:16.488066Z
+6
+svnadmin
+has-props
+
+ojdbc6.jar
+file
+
+
+
+
+2008-05-31T16:24:51.000000Z
+6cd651cf8fc1cd203aa0b334cb69fbea
+2008-02-05T09:38:21.559456Z
+1089
+franky
+has-props
+
