@@ -40,7 +40,7 @@
                 <id>jar</id>
             </reference>
             <reference>
-                <foreign-project>ProjectServices</foreign-project>
+                <foreign-project>ProjectServices2</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>jar</target>

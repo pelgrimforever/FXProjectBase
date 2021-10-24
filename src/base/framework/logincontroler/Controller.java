@@ -52,7 +52,14 @@ public class Controller extends AbstractLoginController {
         protected Task createTask() {
              return new Task<Boolean>() {
                  protected Boolean call() throws Exception {
-                     return Securitycheck.checkLogin(data.getUsername(), data.getPassword());
+                     boolean result = false;
+                     try {
+                        result = Securitycheck.checkLogin(data.getUsername(), data.getPassword());
+                     }
+                     catch(Exception e) {
+                         System.out.println("loginService " + e.getMessage());
+                     }
+                     return result;
                  }
              };
         }
