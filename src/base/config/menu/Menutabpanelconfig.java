@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Menutabpanelconfig.java
  */
 package base.config.menu;
 
@@ -12,15 +11,12 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 /**
- *
+ * Menu tab panel settings for pre-defined menu in FXProjectBase
  * @author Franky Laseure
  */
 public class Menutabpanelconfig extends Menutabcontrolconfig {
     
-    private String widgetconfigfilename;
-    private Document widgetconfigxml = null;
-    private Element widgetconfig;
-    public Element getWidgetconfig() { return widgetconfig; }
+    public Element getWidgetconfig() { return configxml; }
     
     private StringProperty id = new SimpleStringProperty();
     public final String getId(){return id.get();}
@@ -30,16 +26,18 @@ public class Menutabpanelconfig extends Menutabcontrolconfig {
     private String classname;
     public final String getClassname() { return classname; }
     
+    /**
+     * constructor
+     * @param menutabpanelconfig
+     * @throws XMLException 
+     */
     public Menutabpanelconfig(Element menutabpanelconfig) throws XMLException {
         super(menutabpanelconfig);
         controltype = TYPE_PANEL;
-        widgetconfigfilename = configxml.getAttribute("config").getValue();
-        widgetconfigxml = Config.readXML(widgetconfigfilename);
-        widgetconfig = widgetconfigxml.getRootElement();
-        if(widgetconfig.getChild("id")!=null) {
-            id.setValue(widgetconfig.getChild("id").getValue());
+        if(configxml.getChild("id")!=null) {
+            id.setValue(configxml.getChild("id").getValue());
+            classname = configxml.getChild("classname").getValue();
         }
-        classname = widgetconfig.getChild("classname").getValue();
     }
     
 }

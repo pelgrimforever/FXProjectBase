@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * WidgetBase.java
  */
 package base.framework.widget;
 
@@ -19,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
 /**
- *
+ * abstract super class for Widgets with basic functionality
  * @author Franky Laseure
  */
 public abstract class WidgetBase extends StackPane {
@@ -29,10 +28,14 @@ public abstract class WidgetBase extends StackPane {
     public void setConfig(Menutabpanelconfig controlconfig) {
         this.controlconfig = controlconfig;
         base = new Base(controlconfig.getWidgetconfig());
-        String iconpath = Config.configmap + controlconfig.getIcon();
+        String iconpath = Config.getConfigmap() + controlconfig.getIcon();
         icon = new Image(iconpath, defaultimagesize, defaultimagesize, true, false);
         widgettxt = TXT.getWidgettxt(controlconfig.getId());
     }
+    
+    /**
+     * @return Menutabpanelconfig
+     */
     public Menutabpanelconfig getConfig() { return controlconfig; }
     protected Base base;
 
@@ -53,14 +56,13 @@ public abstract class WidgetBase extends StackPane {
     protected Image icon;
     public static final Integer defaultimagesize = 20;
     
+    /**
+     * constructor
+     */
     public WidgetBase() {
         setWidgetstyleClass(defaultstyleClass);
     }
 
     public abstract void load();
-    
-    public ImageView createImageview(Image icon, Integer imagesize) {
-        return base.createImageview(icon, imagesize);
-    }
     
 }

@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Userview.java
  */
 package base.framework.login;
 
@@ -19,7 +18,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 /**
- *
+ * User properties Component
  * @author Franky Laseure
  */
 public class Userview extends GridPane {
@@ -40,7 +39,10 @@ public class Userview extends GridPane {
         }
     };
     
-    
+    /**
+     * create Userview Form
+     * @param controller 
+     */
     public Userview(ObjectProperty<Controller> controller) {
         //controler
         this.controller.bind(controller);

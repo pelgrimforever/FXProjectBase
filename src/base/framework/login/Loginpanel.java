@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Loginpanel.java
  */
 package base.framework.login;
 
@@ -16,7 +15,7 @@ import javafx.scene.layout.StackPane;
 
 
 /**
- *
+ * Login panel used in TabToolbarControl
  * @author Franky Laseure
  */
 public class Loginpanel extends StackPane {
@@ -36,6 +35,9 @@ public class Loginpanel extends StackPane {
     private Registerform registerform = new Registerform(controller);
     private Userview userview = new Userview(controller);
     
+    /**
+     * Constructor
+     */
     public Loginpanel() {
         //controler
         loginform.controllerProperty().bind(controller);
@@ -46,6 +48,9 @@ public class Loginpanel extends StackPane {
         showform(LOGIN);
     }
     
+    /**
+     * Login Form action
+     */
     private EventHandler logineventhandler = new EventHandler<ControllerEvent>() {
         @Override public void handle(ControllerEvent e) {
             //BUTTON ACTIONS

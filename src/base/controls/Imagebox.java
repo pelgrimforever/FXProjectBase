@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Imagebox.java
  */
 package base.controls;
 
@@ -15,7 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
+ * Imagebox, implementation of ImageView
  * @author Franky Laseure
  */
 public class Imagebox extends ImageView {
@@ -23,10 +22,20 @@ public class Imagebox extends ImageView {
     private double width;
     private double height;
     
+    /**
+     * constructor, set image in original size
+     * @param image Image
+     */
     public Imagebox(Image image) {
         this(image, image.getWidth(), image.getHeight());
     }
     
+    /**
+     * constructor, set image and override width and height
+     * @param image Image
+     * @param width
+     * @param height 
+     */
     public Imagebox(Image image, double width, double height) {
         this.height = height;
         this.width = width;
@@ -40,6 +49,10 @@ public class Imagebox extends ImageView {
         this.setPreserveRatio(true);
     }
     
+    /**
+     * change image, scale to previous image with/height
+     * @param image Image
+     */
     public void updateImage(Image image) {
         this.setImage(image);
         if(image!=null) {

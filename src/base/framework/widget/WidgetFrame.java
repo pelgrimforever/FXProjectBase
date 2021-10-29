@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * WidgetFrame.java
  */
 package base.framework.widget;
 
@@ -25,7 +24,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
 /**
- *
+ * WidgetFrame class
+ * Wrapper for a Component to fit in this framework
  * @author Franky Laseure
  */
 public class WidgetFrame extends BorderPane {
@@ -38,7 +38,11 @@ public class WidgetFrame extends BorderPane {
     public void addEventHandler(String objectid, EventHandler<Event> eventhandler) {
         eventhandlers.put(objectid, eventhandler);
     }
-    
+
+    /**
+     * send event to all subscribers
+     * @param event 
+     */
     protected void triggerevents(Event event) {
         Iterator<EventHandler<Event>> eventhandlersI = eventhandlers.values().iterator();
         while(eventhandlersI.hasNext()) {
@@ -46,6 +50,9 @@ public class WidgetFrame extends BorderPane {
         }
     }
 
+    /**
+     * send CLOSEEVENT to all subscribers
+     */
     private EventHandler closeevent = new EventHandler<MouseEvent>() {
         @Override public void handle(MouseEvent e) {
             WidgetEvent event = new WidgetEvent(WidgetEvent.CLOSEEVENT);
@@ -54,6 +61,9 @@ public class WidgetFrame extends BorderPane {
         }
     };
 
+    /**
+     * send SETFULLSCREENEVENT / SETNORMALSCREENEVENT to all subscribers
+     */
     private EventHandler fullscreenbuttonevent = new EventHandler<MouseEvent>() {
         @Override public void handle(MouseEvent e) {
             setFullscreenstate(!getFullscreenstate());
@@ -84,7 +94,13 @@ public class WidgetFrame extends BorderPane {
     private WaitIconbox iconbox;
     private CrosslineIconbox closeiconbox;
     private TwoStateIconbox minmaxiconbox;
-    
+
+    /**
+     * constructor
+     * the widget Component is here instantiated and loaded into the WidgetFrame
+     * @param controlconfig Menutabpanelconfig
+     * @throws WidgetException 
+     */
     public WidgetFrame(Menutabpanelconfig controlconfig) throws WidgetException {
         this.self = this;
         this.controlconfig = controlconfig;
@@ -109,7 +125,7 @@ public class WidgetFrame extends BorderPane {
         //TOP controls
         iconbox = new WaitIconbox(widget.icon, widget.defaultimagesize);
         iconbox.waitingProperty().bind(widget.waitingProperty());
-        minmaxiconbox = new TwoStateIconbox(UIsettings.getExpandimage(), UIsettings.getExpandimage(), widget.defaultimagesize);
+        minmaxiconbox = new TwoStateIconbox(UIsettings.getExpandimage(), UIsettings.getExpandimage());
         minmaxiconbox.setOnMouseClicked(fullscreenbuttonevent);
         minmaxiconbox.activestateProperty().bind(fullscreenstate);
         closeiconbox = new CrosslineIconbox(widget.icon, widget.defaultimagesize);

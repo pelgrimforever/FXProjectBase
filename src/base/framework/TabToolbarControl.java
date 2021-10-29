@@ -75,7 +75,7 @@ public class TabToolbarControl extends BorderPane {
                 menutabcontrolconfig = menucontrolconfigs.next();
                 if(menutabcontrolconfig.getControltype().equals(Menutabcontrolconfig.TYPE_PANEL)) {
                     id = menutabcontrolconfig.getLabelname();
-                    iconpath = Config.configmap + menutabcontrolconfig.getIcon();
+                    iconpath = Config.getConfigmap() + menutabcontrolconfig.getIcon();
                     toolbarbutton = new ToolbarButton(id, menutabcontrolconfig.labelProperty(), iconpath, toolbarbuttonevent);
                     toolbar.addControl(toolbarbutton);
                     controlconfigs.put(id, menutabcontrolconfig);

@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * TwoStateIconbox.java
  */
 package base.controls;
 
@@ -18,14 +17,13 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 /**
- *
+ * Iconbox with 2 images, representing 2 states
  * @author Franky Laseure
  */
 public class TwoStateIconbox extends StackPane {
     
     private Image iconstate1;
     private Image iconstate2;
-    private double imagesize;
     private Iconbox iconview1;
     private Iconbox iconview2;
     
@@ -34,10 +32,14 @@ public class TwoStateIconbox extends StackPane {
     public final void setActivestate(Boolean value){activestate.set(value);}
     public BooleanProperty activestateProperty() {return activestate;}
     
-    public TwoStateIconbox(Image iconstate1, Image iconstate2, double imagesize) {
+    /**
+     * constructor
+     * @param iconstate1 icon for not active state
+     * @param iconstate2 icon for active statie
+     */
+    public TwoStateIconbox(Image iconstate1, Image iconstate2) {
         this.iconstate1 = iconstate1;
         this.iconstate2 = iconstate2;
-        this.imagesize = imagesize;
         iconview1 = new Iconbox(iconstate1);
         iconview2 = new Iconbox(iconstate2);
         iconview2.visibleProperty().bind(activestate);

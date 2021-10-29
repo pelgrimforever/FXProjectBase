@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * CrosslineIconbox.java
  */
 package base.controls;
 
@@ -10,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 /**
- *
+ * Icon box with crossline through the icon
  * @author Franky Laseure
  */
 public class CrosslineIconbox extends StackPane {
@@ -20,6 +19,10 @@ public class CrosslineIconbox extends StackPane {
     private Iconbox iconview;
     private Iconbox iconwaitview;
     
+    /**
+     * @param icon Image
+     * @param imagesize image size
+     */
     public CrosslineIconbox(Image icon, double imagesize) {
         this.icon = icon;
         this.imagesize = imagesize;

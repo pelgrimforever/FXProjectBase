@@ -1,0 +1,16 @@
+<config>
+	<menu>
+		<menutab>TAB_EXAMPLE</menutab>
+		<menutab>TAB_DEMO</menutab>
+	</menu>
+	<tabcontrol>
+		<panel icon="icons/bladeren.jpg" config="widgets/example1.xml" menutab="TAB_EXAMPLE">
+			<id>WIDGET_EXAMPLE1</id>
+			<classname>base.examples.widgets.example1.Example1</classname>
+		</panel>
+		<panel icon="icons/upload.jpg" config="widgets/demo.xml" menutab="TAB_DEMO">
+			<id>WIDGET_DEMO1</id>
+			<classname>base.examples.widgets.demo1.Demo1</classname>
+		</panel>
+	</tabcontrol>
+</config>

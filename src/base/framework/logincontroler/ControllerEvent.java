@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * ControllerEvent.java
  */
 package base.framework.logincontroler;
 
@@ -8,7 +7,7 @@ import javafx.event.Event;
 import javafx.event.EventType;
 
 /**
- *
+ * Login Controller events
  * @author Franky Laseure
  */
 public class ControllerEvent extends Event {
@@ -23,6 +22,10 @@ public class ControllerEvent extends Event {
     public boolean getSuccess() { return success; }
     public void setSuccess(boolean success) { this.success = success; }
     
+    /**
+     * constructor
+     * @param eventtype EventType constant
+     */
     public ControllerEvent(EventType<ControllerEvent> eventtype){
         super(eventtype);
     }

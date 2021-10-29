@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * RotateIconbox.java
  */
 package base.controls;
 
@@ -17,13 +16,12 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 /**
- *
+ * Rotating Iconbox, used in VerticalToolbar
  * @author Franky Laseure
  */
 public class RotateIconbox extends StackPane {
     
     private Image icon;
-    private double imagesize;
     private Iconbox iconview;
     private Iconbox rotateiconview;
     
@@ -34,9 +32,8 @@ public class RotateIconbox extends StackPane {
     
     SequentialTransition buttonanimation;
             
-    public RotateIconbox(Image icon, double imagesize) {
+    public RotateIconbox(Image icon) {
         this.icon = icon;
-        this.imagesize = imagesize;
         iconview = new Iconbox(icon);
         iconview.visibleProperty().bind(waiting.not());
         rotateiconview = new Iconbox(icon);
@@ -46,7 +43,7 @@ public class RotateIconbox extends StackPane {
         getanimation();
     }
     
-    public void getanimation() {
+    private void getanimation() {
         RotateTransition rotateTransition = new RotateTransition(Duration.millis(1000), rotateiconview);
         rotateTransition.setByAngle(360f);
         rotateTransition.setCycleCount(Timeline.INDEFINITE);

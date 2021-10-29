@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * WaitIconbox.java
  */
 package base.controls;
 
@@ -18,7 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 /**
- *
+ * Iconbox with wait animation (rotation)
  * @author Franky Laseure
  */
 public class WaitIconbox extends StackPane {
@@ -49,7 +48,7 @@ public class WaitIconbox extends StackPane {
         getanimation();
     }
     
-    public void getanimation() {
+    private void getanimation() {
         RotateTransition rotateTransition = new RotateTransition(Duration.millis(1000), iconwaitview);
         rotateTransition.setByAngle(360f);
         rotateTransition.setCycleCount(Timeline.INDEFINITE);

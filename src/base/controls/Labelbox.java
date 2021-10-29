@@ -1,13 +1,12 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Labelbox.java
  */
 package base.controls;
 
 import javafx.scene.control.Label;
 
 /**
- *
+ * Label customized with styling for this framwork widgets
  * @author Franky Laseure
  */
 public class Labelbox extends Label {

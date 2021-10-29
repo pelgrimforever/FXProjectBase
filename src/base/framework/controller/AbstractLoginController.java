@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AbstractLoginController.java
  */
 package base.framework.controller;
 
@@ -11,17 +10,26 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 
 /**
- *
+ * add Logon Login EventHandler to Component controllers
  * @author Franky Laseure
  */
 public abstract class AbstractLoginController {
     
-    private HashMap<String, EventHandler<Event>> eventhandlers = 
-            new HashMap<String, EventHandler<Event>>();
+    private HashMap<String, EventHandler<Event>> eventhandlers = new HashMap<String, EventHandler<Event>>();
+    
+    /**
+     * add eventhandler (subscribe)
+     * @param objectid
+     * @param eventhandler 
+     */
     public void setLoginEventHandler(String objectid, EventHandler<Event> eventhandler) {
         eventhandlers.put(objectid, eventhandler);
     }
     
+    /**
+     * send event to all "subscribed" eventhandlers
+     * @param event Event to send out
+     */
     protected void triggerevents(Event event) {
         Iterator<EventHandler<Event>> eventhandlersI = eventhandlers.values().iterator();
         while(eventhandlersI.hasNext()) {

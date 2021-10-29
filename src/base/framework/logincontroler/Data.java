@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Data.java
  */
 package base.framework.logincontroler;
 
@@ -8,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * Data component for Login form
  * @author Franky Laseure
  */
 public class Data {

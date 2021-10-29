@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Login.java
  */
 package base.framework.login;
 
@@ -20,7 +19,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 /**
- *
+ * Login Form, part of Loginpanel
  * @author Franky Laseure
  */
 public class Loginform extends GridPane {
@@ -53,6 +52,10 @@ public class Loginform extends GridPane {
         }
     };
     
+    /**
+     * constructor
+     * @param controller Component controller
+     */
     public Loginform(ObjectProperty<Controller> controller) {
         //controler
         this.controller.bind(controller);

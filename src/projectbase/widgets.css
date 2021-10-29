@@ -1,0 +1,108 @@
+/************/
+/*FilmTabToolbar*/
+/************/
+/* START ContentPanel */
+/* TabToolbarControl panel level 1*/
+.film_full_white {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-color: #000000;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-width: 0;
+}
+/* TabToolbar panel level 1.1*/
+.film_tabtoolbar {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0 0 0 0;
+}
+/* Toolbar panel level 1.1.2 */
+.film_toolbarbuttonpanel {
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 4 0 4; /* top right bottom left */
+    -fx-background-radius: 4 4 4 4;
+}
+/* TabToolbarControl.Contentpanel panel level 1.2 */
+.film_default_topleft {
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 0 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+/* END ContentPanel */
+/* START Togglebutton */
+.filmtoolbar_tab {
+    -fx-text-fill: #000000;
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2;
+    -fx-border-color: #C0C0CF;
+    -fx-border-insets: 0;
+    -fx-border-radius: 4;
+    -fx-border-width: 2;
+    -fx-padding: 4;
+    -fx-graphic-hpos: center;
+    -fx-graphic-vpos: top;
+    -fx-graphic-text-gap: 4;
+    -fx-text-alignment: center;
+    -fx-font: 18px "Serif";
+    -fx-vpos: bottom;
+}
+.filmtoolbar_tab:hover {
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.filmtoolbar_tab:pressed {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+.filmtoolbar_tab:selected {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+
+.phototoolbar_tab {
+    -fx-text-fill: #000000;
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+    -fx-border-color: #C0C0CF;
+    -fx-border-insets: 0;
+    -fx-border-radius: 2;
+    -fx-border-width: 2;
+    -fx-padding: 4;
+    -fx-graphic-hpos: center;
+    -fx-graphic-vpos: top;
+    -fx-graphic-text-gap: 5;
+    -fx-text-alignment: center;
+    -fx-font: 18px "Serif";
+    -fx-vpos: bottom;
+}
+.phototoolbar_tab:hover {
+    -fx-text-fill: #000000;
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.phototoolbar_tab:pressed {
+    -fx-text-fill: #000000;
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+.phototoolbar_tab:selected {
+    -fx-text-fill: #000000;
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+/* END Togglebutton */
+.contentlabel {
+    -fx-font: 18px "Serif";
+}
+.labelfocus {
+    -fx-background-color: #E0E0EF;
+    -fx-background-radius: 2 2 2 2;
+}

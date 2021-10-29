@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * DataEvent.java
  */
 package base.framework.controller;
 
@@ -9,7 +8,9 @@ import javafx.event.EventTarget;
 import javafx.event.EventType;
 
 /**
- *
+ * Customized Data driven Event
+ * used in datahandlers/data objects generated for database tables
+ * user in GUI components to get events when this data has changed
  * @author Franky Laseure
  */
 public class DataEvent extends Event {
@@ -24,20 +25,39 @@ public class DataEvent extends Event {
     
     private Object dataobject = null;
     
+    /**
+     * constructor, using default the DATA_CHANGED EventType
+     * @param dataobject Object linked to event
+     */
     public DataEvent(Object dataobject) {
         this(DATA_CHANGED, dataobject);
     }
     
-    public DataEvent(EventType<? extends Event> arg0, Object dataobject) {
-        super(arg0);
+    /**
+     * constructor, for selected EventType
+     * @param eventType constant
+     * @param dataobject Object linked to event
+     */
+    public DataEvent(EventType<? extends Event> eventType, Object dataobject) {
+        super(eventType);
         this.dataobject = dataobject;
     }
-    
-    public DataEvent(Object arg0, EventTarget arg1, EventType<? extends Event> arg2, Object dataobject) {
-        super(arg0, arg1, arg2);
+
+    /**
+     * constructor
+     * @param source the event source which sent the event
+     * @param target the event target to associate with the event
+     * @param eventType the event type
+     * @param dataobject Object linked to event
+     */
+    public DataEvent(Object source, EventTarget target, EventType<? extends Event> eventType, Object dataobject) {
+        super(source, target, eventType);
         this.dataobject = dataobject;
     }  
     
+    /**
+     * @return data object linked to Event
+     */
     public Object getDataobject() {
         return dataobject;
     }

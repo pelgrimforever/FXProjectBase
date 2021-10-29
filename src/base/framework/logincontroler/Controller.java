@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Controller.java
  */
 package base.framework.logincontroler;
 
@@ -14,7 +13,7 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 
 /**
- *
+ * Controller for Login Component
  * @author Franky Laseure
  */
 public class Controller extends AbstractLoginController {
@@ -27,11 +26,17 @@ public class Controller extends AbstractLoginController {
     public Controller() {        
     }
     
+    /**
+     * Display Login Form
+     */
     public void gotoLoginform() {
         ControllerEvent event = new ControllerEvent(ControllerEvent.BUTTONLOGINEVENT);
         super.triggerevents(event);
     }
     
+    /**
+     * check login data and send result out with event
+     */
     public void checkLogin() {
         loginService loginservice = new loginService();
         loginservice.data = getData();
@@ -47,6 +52,9 @@ public class Controller extends AbstractLoginController {
         loginservice.start();
     }
     
+    /**
+     * send login call to server
+     */
     private static class loginService extends Service<Boolean> {
         public Data data;
         protected Task createTask() {

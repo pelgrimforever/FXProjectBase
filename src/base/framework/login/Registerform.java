@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Registerform.java
  */
 package base.framework.login;
 
@@ -18,7 +17,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 
 /**
- *
+ * Registration form
  * @author Franky Laseure
  */
 public class Registerform extends GridPane {
@@ -51,6 +50,10 @@ public class Registerform extends GridPane {
         }
     };
     
+    /**
+     * constructor
+     * @param controller Component controller
+     */
     public Registerform(ObjectProperty<Controller> controller) {
         //controler
         this.controller.bind(controller);

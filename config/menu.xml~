@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : text.xml
+    Created on : December 30, 2011, 6:27 PM
+    Author     : pelgrim
+    Description:
+        Text values
+-->
+
+<config>
+    <menu>
+	<menutab>MENU_COMPONENTS</menutab>
+	<menutab>MENU_ANIMATIONS</menutab>
+    </menu>
+
+    <tabcontrol>
+	<panel icon="icons/bladeren.jpg" config="widgets/explore.xml" menutab="MENU_COMPONENTS">BUTTON_EXPLORE</panel>
+	<panel icon="icons/filter.jpg" config="widgets/filter.xml" menutab="MENU_COMPONENTS">BUTTON_FILTER</panel>
+
+	<panel icon="icons/bladeren.jpg" config="widgets/explore.xml" menutab="MENU_ANIMATIONS">BUTTON_EXPLORE</panel>
+	<panel icon="icons/filter.jpg" config="widgets/filter.xml" menutab="MENU_ANIMATIONS">BUTTON_FILTER</panel>
+    </tabcontrol>
+</config>

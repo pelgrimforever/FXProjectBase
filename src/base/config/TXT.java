@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * TXT.java
  */
 package base.config;
 
@@ -12,7 +11,8 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 /**
- *
+ * Application label translation object
+ * all properties and function are implemented static, making them easy accessible in all GUI components
  * @author Franky Laseure
  */
 public class TXT {
@@ -68,7 +68,11 @@ public class TXT {
     private static HashMap<String, Widgettxt> widgettxts = new HashMap();
     private static HashMap<String, Componenttxt> componenttxts = new HashMap();
     
-    public static void getInstance(Document xml) {
+    /**
+     * initialize all settings
+     * @param xml Translation xml document
+     */
+    public static void initialize(Document xml) {
         configxml = xml;
         root = configxml.getRootElement();
         applicationTitle.setValue(root.getChild("APPLICATION_TITLE").getValue());
@@ -94,14 +98,29 @@ public class TXT {
         }
     }
     
+    /**
+     * get application label
+     * @param name label name
+     * @return label translation
+     */
     public static String getText(String name) {
         return root.getChild(name).getValue();
     }
 
+    /**
+     * get component element with attribute id = componentid
+     * @param componentid
+     * @return XML element
+     */
     public static Componenttxt getComponenttxt(String componentid) {
         return componenttxts.get(componentid);
     }
 
+    /**
+     * get widget element with attribute id = widgetid
+     * @param widgetid
+     * @return XML element
+     */
     public static Widgettxt getWidgettxt(String widgetid) {
         return widgettxts.get(widgetid);
     }

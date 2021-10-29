@@ -4,7 +4,8 @@ import java.io.File;
 import javax.swing.filechooser.FileFilter;
 
 /**
- *
+ * Implementation of FileFilter 
+ * allows only directories
  * @author pelgrim
  */
 public class DIRFilter extends FileFilter {

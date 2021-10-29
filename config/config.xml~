@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : text.xml
+    Created on : December 30, 2011, 6:27 PM
+    Author     : pelgrim
+    Description:
+        Text values
+-->
+
+<config>
+    <server></server>
+    <defaultwebservice></defaultwebservice>
+
+    <defaultlanguage>BE_NL</defaultlanguage>
+    <translationmap>text/</translationmap>
+	<!-- if menuxml has a value, standard menu controls are loaded -->
+	<!-- else, the defaultscreen javaclass is loaded -->
+    <menuxml></menuxml>
+	<defaultscreen>projectgenerator.GUI.Projectcanvas</defaultscreen>
+
+    <UIsettings>
+	<fontname>Serif</fontname>
+	<fontsize>10</fontsize>
+	<buttonfontsize>10</buttonfontsize>
+	<tabfontsize>14</tabfontsize>
+	<panelpadding>10</panelpadding>
+	<panelarc>5</panelarc>
+	<imagearc>3</imagearc>
+    </UIsettings>
+
+    <UIelements>
+		<waiticon>icons/expand.png</waiticon>
+		<expandicon>icons/wait.png</expandicon>
+<!--
+	<filmstype dir="icons/filmtype/">
+	    <APS>aps-film.gif</APS>
+	    <CON>con-film.gif</CON>
+	    <DIA>dia.gif</DIA>
+	    <DIG>digital.jpg</DIG>
+	    <INT>internet.jpg</INT>
+	    <SCA>scanner.gif</SCA>
+	</filmstype>
+-->
+    </UIelements>
+</config>

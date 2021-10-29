@@ -1,0 +1,21 @@
+<config>
+	<server></server>
+	<defaultwebservice></defaultwebservice>
+	<defaultlanguage>BE_NL</defaultlanguage>
+	<translationmap>text/</translationmap>
+	<fxmenuxml>fxmenu.xml</fxmenuxml>
+	<defaultscreen/>
+	<UIsettings>
+		<fontname>Serif</fontname>
+		<fontsize>10</fontsize>
+		<panelpadding>4</panelpadding>
+		<panelarc>2</panelarc>
+		<imagearc>2</imagearc>
+		<buttonfontsize>10</buttonfontsize>
+		<tabfontsize>14</tabfontsize>
+	</UIsettings>
+	<UIelements>
+		<waiticon>icons/wait.png</waiticon>
+		<expandicon>icons/expand.png</expandicon>
+	</UIelements>
+</config>

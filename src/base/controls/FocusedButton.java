@@ -3,8 +3,8 @@ package base.controls;
 import javafx.scene.Node;
 
 /**
- *
- * @author pelgrim
+ * Binds defaulButton to focused, making the enter action always choose the focused button
+ * @author Franky Laseure
  */
 public class FocusedButton extends javafx.scene.control.Button {
 

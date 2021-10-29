@@ -1,0 +1,328 @@
+.scene{
+    -fx-background: #BBBBBB
+}
+
+/************/
+/*TabToolbar*/
+/************/
+/* TabToolbarControl */
+.tabtoolbarcontrol {
+    -fx-background-color: #000000;
+    -fx-background-insets: 4 4 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: #000000;
+    -fx-border-insets: 4 4 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+/* TabToolbar */
+.tabtoolbar *.tab-header-background {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0 0 0 0;
+}
+.tabtoolbar .tab {
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 2 2 0 0;
+    -fx-border-color: #A0A0AF;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 2 2 0 0;
+    -fx-border-width: 0;
+    -fx-padding: 2 4 0 4;
+    -fx-font: 20px "Serif";
+}
+.tabtoolbar .tab:hover {
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.tabtoolbar .tab:pressed {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+.tabtoolbar .tab:selected {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+}
+/* Toolbar */
+.toolbar {
+    -fx-background-color: #E0E0EF;
+}
+/* toolbarbutton */
+.toolbarbutton {
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2;
+    -fx-border-color: #C0C0CF;
+    -fx-border-insets: 0;
+    -fx-border-radius: 2;
+    -fx-border-width: 2;
+    -fx-padding: 4;
+    -fx-graphic-hpos: center;
+    -fx-graphic-vpos: top;
+    -fx-graphic-text-gap: 2;
+    -fx-text-alignment: center;
+    -fx-vpos: bottom;
+    -fx-font: 16px "Serif";
+}
+.toolbarbutton:hover {
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.toolbarbutton:pressed {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+    -fx-border-color: #E0E0EF;
+}
+.toolbarbutton:selected {
+    -fx-color: #E0E0EF;
+    -fx-background-color: skyblue;
+}
+/* Login form */
+.logincontrol {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 0 0 4;
+    -fx-background-radius: 2 2 0 0;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 0 4;
+    -fx-border-radius: 2 2 0 0;
+    -fx-border-width: 2 2 0 2;
+    -fx-text-alignment: center;
+    /*-fx-font: 20px "Serif";*/
+}
+.verticaltabtoolbar {
+    -fx-background-color: #E0E0EF;
+    -fx-spacing: 2;
+}
+
+/* TabToolbarControl.Contentpanel panel level 1.2 */
+.contentpanel_default_topleft {
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 0 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+.contentpanel_default_topleft big {
+    -fx-background-insets: 0 0 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-insets: 0 0 10 10;
+    -fx-border-radius: 10 10 10 10;
+    -fx-border-width: 5;
+}
+/* Verticalbuttonbar */
+.contentpanel_default_topright {
+    -fx-background-insets: 0 4 4 0;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 4 4 0;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+
+.contentpanel_default_topright .big {
+}
+/* END ContentPanel */
+/* START HBox */
+.tabtoolbar_buttonpanelcontent {
+    -fx-background-color: #E0E0EF;
+    -fx-spacing: 2;
+}
+/* END HBox */
+/************/
+/*TabToolbar*/
+/************/
+/*********************/
+/*Horizontalbuttonbar*/
+/*********************/
+/* START Button */
+.horizontaltoolbar_button {
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2;
+    -fx-border-color: #C0C0CF;
+    -fx-border-insets: 0;
+    -fx-border-radius: 2;
+    -fx-border-width: 1;
+    -fx-padding: 4;
+    -fx-graphic-hpos: center;
+    -fx-graphic-vpos: center;
+}
+.horizontaltoolbar_button .big {
+    -fx-background-insets: 0;
+    -fx-background-radius: 7;
+    -fx-border-insets: 0;
+    -fx-border-radius: 7;
+    -fx-border-width: 3;
+    -fx-padding: 10;
+}
+.horizontaltoolbar_button:hover {
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.horizontaltoolbar_button .big:hover {
+    -fx-color: #C0C0CF;
+    -fx-background-color: #C0C0CF;
+}
+.horizontaltoolbar_button:pressed {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+    -fx-border-color: #E0E0EF;
+}
+.horizontaltoolbar_button .big:pressed {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+    -fx-border-color: #E0E0EF;
+}
+.horizontaltoolbar_button:selected {
+    -fx-color: #E0E0EF;
+    -fx-background-color: skyblue;
+}
+.horizontaltoolbar_button .big:selected {
+    -fx-color: #E0E0EF;
+    -fx-background-color: skyblue;
+}
+/* END Button */
+/*********************/
+/*Horizontalbuttonbar*/
+/*********************/
+
+/**************/
+/* TabControl */
+/**************/
+.contentpanel_TabControl {
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+}
+.contentpanel_TabControlContent {
+    -fx-background-insets: 0 0 0 0; /* top right bottom left */
+    -fx-background-radius: 10 10 10 10;
+}
+/**************/
+/* TabControl */
+/**************/
+
+.contentpanel_default {
+    -fx-background-color: skyblue;
+    -fx-background-insets: 4 4 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: skyblue;
+    -fx-border-insets: 4 4 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+.contentpanel_border {
+    -fx-background-insets: 4 4 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: white;
+    -fx-border-insets: 4 4 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+.contentpanel_full_white {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 0 0;
+    -fx-border-color: #000000;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-width: 0;
+}
+
+
+/**********/
+/* WIDGET */
+/**********/
+/* START ContentPanel */
+
+.widgetframe {
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 0 0 2;
+    -fx-border-insets: 0 0 0 2;
+    -fx-spacing: 2;
+}
+.widgetbase {
+    -fx-color: #A0A0AF;
+    -fx-background-color: #A0A0AF;
+    -fx-background-insets: 0 0 0 2;
+}
+.widgetframeheader {
+    -fx-color: #E0E0EF;
+    -fx-background-color: #E0E0EF;
+    -fx-background-insets: 0 0 0 2;
+    -fx-background-radius: 2 2 0 0;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 0 2;
+    -fx-border-radius: 2 2 0 0;
+    -fx-border-width: 2 2 0 2;
+    -fx-text-alignment: center;
+    -fx-font: 20px "Serif";
+}
+.widgetframeheader .big {
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 10 10 0 0;
+    -fx-border-width: 5 5 0 5;
+}
+.widgetframebody {
+    -fx-color: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 2 2;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 2 2;
+    -fx-border-width: 0 2 2 2;
+}
+.widgetframebody .big {
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 10 10;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 10 10;
+    -fx-border-width: 0 5 5 5;
+}
+/* START ContentPanel */
+/* START Label */
+.widgetlabel {
+    -fx-font: 20px "Serif", normal, normal;
+}
+.widgetlabel_L {
+    -fx-font: 25px "Serif", bold, normal;
+}
+.widgetlabel_XL {
+    -fx-font: 30px "Serif", bold, normal;
+}
+/* END Label */
+/**********/
+/* WIDGET */
+/**********/
+/*****************/
+/* DEFAULT SCREEN*/
+.defaultscreen {
+    -fx-background-color: #000000;
+    -fx-background-insets: 4 4 4 4;
+    -fx-background-radius: 4 4 4 4;
+    -fx-border-color: #000000;
+    -fx-border-insets: 4 4 4 4;
+    -fx-border-radius: 4 4 4 4;
+    -fx-border-width: 2;
+}
+.defaultscreenbody {
+    -fx-color: #FFFFFF;
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 0 0 2 2;
+    -fx-border-color: #E0E0EF;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 2 2;
+    -fx-border-width: 0 2 2 2;
+    -fx-text-alignment: center;
+    -fx-font: 16px "Serif";
+}
+/* DEFAULT SCREEN*/
+/*****************/

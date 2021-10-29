@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Config.java
  */
 package base.config;
 
@@ -18,7 +17,8 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 /**
- *
+ * FX GUI configuration
+ * is implemented as Singleton
  * @author Franky Laseure
  */
 public class Config {
@@ -29,7 +29,7 @@ public class Config {
     //public-read var IMAGEPREFIX:String = "file:";
     public static String IMAGEPREFIX = "file://";
 
-    public static String configmap;
+    private static String configmap;
     private static final String CONFIGMAP = "config/";
     public static String DEFAULTWEBSERVICE;
     public static Element UIelements;
@@ -51,20 +51,45 @@ public class Config {
 
     private Element root;
     
+    /**
+     * @return Config instance
+     */
     public static Config getInstance() {
         return config;
     }
 
+    /**
+     * initialize Singleton instance with default scale
+     * @param server server path
+     * @param projectpath project path on server
+     * @return Config instance
+     */
     public static Config buildInstance(String server, String projectpath) {
         config = new Config(server, projectpath, defautscale);
         return config;
     }
     
+    /**
+     * initialize Singleton instance
+     * @param server server path
+     * @param projectpath project path on server
+     * @param scale GUI scale
+     * @return Config instance
+     */
     public static Config buildInstance(String server, String projectpath, float scale) {
         config = new Config(server, projectpath, scale);
         return config;
     }
     
+    /**
+     * constructor
+     * set path and scale parameters
+     * read config xml file
+     * initialize config constants and pre-configured menu settings
+     * @param server server path
+     * @param projectpath project path on server
+     * @param scale GUI scale
+     */
     private Config(String server, String projectpath, float scale) {
         //set url variables
         this.server = server;
@@ -85,6 +110,21 @@ public class Config {
         }
     }
     
+    /**
+     * @return formatted config map (add file:// if it is not file on a http address)
+     */
+    public static String getConfigmap() {
+        if(configmap.startsWith("http:")) {
+            return configmap;
+        } else {
+            return IMAGEPREFIX + configmap;
+        }
+        
+    }
+    
+    /**
+     * initialize constants from config xml
+     */
     private void initcontants() {
         root = configxml.getRootElement();
 
@@ -100,15 +140,25 @@ public class Config {
         UIelements = root.getChild("UIelements");
     }        
 
+    /**
+     * initialize menu settings from translation xml file
+     * @throws XMLException 
+     */
     private void init_configobjects() throws XMLException {
-        TXT.getInstance(readXML(TRANSLATION_FILENAME));
+        TXT.initialize(readXML(TRANSLATION_FILENAME));
         if(!MENU_FILENAME.equals("")) {
-            Menuconfig.getInstance(readXML(MENU_FILENAME));
+            Menuconfig.initialize(readXML(MENU_FILENAME));
         }
-        UIsettings.getInstance(scale, root.getChild("UIsettings"));
+        UIsettings.initialize(scale, root.getChild("UIsettings"));
         //DataHandler.config = this;
     }
     
+    /**
+     * read XML file
+     * @param xmlfile file path
+     * @return XML Document
+     * @throws XMLException 
+     */
     public static Document readXML(String xmlfile) throws XMLException {
         Document xmldoc = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

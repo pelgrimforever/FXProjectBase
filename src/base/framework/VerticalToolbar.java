@@ -50,9 +50,9 @@ public class VerticalToolbar extends VBox {
         if(button==null) {
             //button = new Button();
             //button.setId(buttonid);
-            String iconpath = Config.configmap + controlconfig.getIcon();
+            String iconpath = Config.getConfigmap() + controlconfig.getIcon();
             Image image = new Image(iconpath, iconsize, iconsize, true, false);
-            RotateIconbox iconbox = new RotateIconbox(image, iconsize);
+            RotateIconbox iconbox = new RotateIconbox(image);
             iconbox.setOnMouseClicked(activebuttonevent);
             iconbox.waitingProperty().bind(widgetframe.getWidget().waitingProperty());
             iconbox.setId(buttonid);

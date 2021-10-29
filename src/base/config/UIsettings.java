@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * UIsettings.java
  */
 package base.config;
 
@@ -12,7 +11,8 @@ import javafx.scene.text.Font;
 import org.jdom2.Element;
 
 /**
- *
+ * Application GUI settings
+ * all properties and function are implemented static, making them easy accessible in all GUI components
  * @author Franky Laseure
  */
 public class UIsettings {
@@ -95,7 +95,12 @@ public class UIsettings {
     public static void setExpandimage(Image newValue) { expandimage.set(newValue); }
     public static ObjectProperty<Image> expandimageProperty() { return expandimage; }    
     
-    public static void getInstance(float newscale, Element xmlelement) {
+    /**
+     * initialize GUI settings
+     * @param newscale scale override
+     * @param xmlelement XML element UIsettings from config xml
+     */
+    public static void initialize(float newscale, Element xmlelement) {
         calculatedscale = newscale;
         uisettingselement = xmlelement;
         setScale(calculatedscale);
@@ -115,8 +120,8 @@ public class UIsettings {
         setTabfont(new Font(getFontname(), getTabfontsize()));
 
         setWaiticon(Config.UIelements.getChild("waiticon").getValue());
-        setWaitimage(new Image(Config.IMAGEPREFIX + Config.configmap + getWaiticon()));
+        setWaitimage(new Image(Config.getConfigmap() + getWaiticon()));
         setExpandicon(Config.UIelements.getChild("expandicon").getValue());
-        setExpandimage(new Image(Config.IMAGEPREFIX + Config.configmap + getExpandicon()));
+        setExpandimage(new Image(Config.getConfigmap() + getExpandicon()));
     }
 }

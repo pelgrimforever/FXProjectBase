@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Iconbox.java
  */
 package base.controls;
 
@@ -13,17 +12,26 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
+ * Square Icon box based on ImageView
  * @author Franky Laseure
  */
 public class Iconbox extends ImageView {
     
     private Image icon;
     
+    /**
+     * set icon, with square size = icon height
+     * @param icon Image
+     */
     public void setIcon(Image icon) {
         setIcon(icon, icon.getHeight());
     }
-    
+
+    /**
+     * set icon with square size override
+     * @param icon Image
+     * @param iconheight icon height 
+     */
     public void setIcon(Image icon, double iconheight) { 
         this.icon = icon;
         iconsize = iconheight;
@@ -37,10 +45,19 @@ public class Iconbox extends ImageView {
     }
     
     private double iconsize;
+    
+    /**
+     * change icon size
+     * @param iconheight 
+     */
     public void setIconsize(double iconheight) {
         iconsize = iconheight;
         this.setFitHeight(iconsize);
     }
+    
+    /**
+     * @return icon size
+     */
     public double getIconsize() { return iconsize ;}
     
     private ObjectProperty<Rectangle> clipnode = new SimpleObjectProperty();
@@ -48,10 +65,21 @@ public class Iconbox extends ImageView {
     private final void setClipnode(Rectangle value){clipnode.set(value);}
     private ObjectProperty<Rectangle> waitingProperty() {return clipnode;}
     
+    /**
+     * constructor
+     * sets icon, with square size = icon height
+     * @param icon Image
+     */
     public Iconbox(Image icon) {
         this(icon, icon.getHeight());
     }
     
+    /**
+     * constructor
+     * set icon with square size override
+     * @param icon Image
+     * @param iconheight icon height 
+     */
     public Iconbox(Image icon, double iconheight) {
         setIcon(icon, iconheight);
         this.setPreserveRatio(true);

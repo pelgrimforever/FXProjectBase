@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Menutabcontrolconfig.java
  */
 package base.config.menu;
 
@@ -10,7 +9,7 @@ import javafx.beans.property.StringProperty;
 import org.jdom2.Element;
 
 /**
- *
+ * Menu tab controls settings for pre-defined menu in FXProjectBase
  * @author Franky Laseure
  */
 public class Menutabcontrolconfig {
@@ -46,10 +45,14 @@ public class Menutabcontrolconfig {
     public final void setTab(String value){tab.set(value);}
     public StringProperty tabProperty() {return tab;}
     
+    /**
+     * constructor
+     * @param menutabcontrolelement 
+     */
     public Menutabcontrolconfig(Element menutabcontrolelement) {
         this.configxml = menutabcontrolelement;
         //initialise constants
-        labelname.setValue(configxml.getValue());
+        labelname.setValue(configxml.getChildText("id"));
         label.setValue(TXT.getText(labelname.getValue()));
         icon.setValue(configxml.getAttribute("icon").getValue());
         tab.setValue(configxml.getAttribute("menutab").getValue());        
