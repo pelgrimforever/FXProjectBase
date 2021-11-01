@@ -17,7 +17,7 @@ public class Componenttxt {
 
     /**
      * constructor, initializing the root element of the component
-     * @param componenttxt 
+     * @param componenttxt component xml element
      */
     public Componenttxt(Element componenttxt) {
         this.componenttxt = componenttxt;
@@ -28,7 +28,12 @@ public class Componenttxt {
      * @return translation for label
      */
     public String txt(String name) {
-        return componenttxt.getChild(name).getValue();
+        Element txtelement = componenttxt.getChild(name);
+        if(txtelement==null) {
+            return "*****";
+        } else {
+            return txtelement.getValue();
+        }
     }
     
 }

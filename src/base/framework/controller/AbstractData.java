@@ -45,8 +45,8 @@ public abstract class AbstractData {
     
     /**
      * add EventHandler (subscribe)
-     * @param objectid
-     * @param eventhandler 
+     * @param objectid subscriber id
+     * @param eventhandler Subscriber object
      */
     public void addEventHandler(int objectid, EventHandler<DataEvent> eventhandler) {
         eventhandlers.put(objectid, eventhandler);
@@ -54,7 +54,7 @@ public abstract class AbstractData {
     
     /**
      * remove EventHandler (unsubscribe)
-     * @param objectid 
+     * @param objectid subscriber id
      */
     public void removeEventHandler(int objectid) {
         eventhandlers.remove(objectid);
@@ -69,7 +69,7 @@ public abstract class AbstractData {
     
     /**
      * send event to all "subscribed" eventhandlers
-     * @param event 
+     * @param event Dataevent
      */
     public void triggerevents(DataEvent event) {
         Iterator<EventHandler<DataEvent>> eventhandlersI = eventhandlers.values().iterator();

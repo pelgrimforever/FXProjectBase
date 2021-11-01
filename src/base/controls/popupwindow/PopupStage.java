@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.popupwindow;
 
 import base.config.UIsettings;
@@ -18,7 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- *
+ * Popup window with custom content
  * @author Franky Laseure
  */
 public class PopupStage extends Stage {
@@ -34,10 +30,19 @@ public class PopupStage extends Stage {
         }
     };
     
+    /**
+     * close popup window
+     */
     public void closestage() {
         this.close();
     }
     
+    /**
+     * constructor, opens popup window
+     * @param title popup title
+     * @param closebuttontext button text
+     * @param content custom popup panel
+     */
     public PopupStage(String title, String closebuttontext, Node content) {
         self = this;
         this.initModality(Modality.APPLICATION_MODAL);

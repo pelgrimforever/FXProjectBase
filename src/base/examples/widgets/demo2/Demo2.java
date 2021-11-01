@@ -1,4 +1,4 @@
-package base.examples.widgets.demo1;
+package base.examples.widgets.demo2;
 
 import base.controls.DIRFilter;
 import base.controls.FILEFilter;
@@ -18,7 +18,7 @@ import javax.swing.JFileChooser;
  * Demo Widget
  * @author Franky Laseure
  */
-public class Demo1 extends WidgetBase {
+public class Demo2 extends WidgetBase {
     
     private Controller controller = new Controller();
     
@@ -62,7 +62,7 @@ public class Demo1 extends WidgetBase {
     private HBox directorypanel = new HBox();    
     private HBox filepanel = new HBox();    
     
-    public Demo1() {
+    public Demo2() {
     }
     
     private TextField directorytextbox = new TextField();

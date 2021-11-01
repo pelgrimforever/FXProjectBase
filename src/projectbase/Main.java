@@ -6,7 +6,7 @@ package projectbase;
 import base.AppController;
 import base.config.Config;
 import base.config.TXT;
-import base.framework.TabToolbarControl;
+import base.framework.TabToolbarApp;
 import java.io.IOException;
 import java.util.Map;
 import javafx.application.Application;
@@ -20,7 +20,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
- *
+ * FXProjectBase, Demo application
  * @author Franky Laseure
  */
 public class Main extends Application {
@@ -67,7 +67,7 @@ public class Main extends Application {
         scene.getStylesheets().add(this.getClass().getResource("widgets.css").toExternalForm());        
         scene.getStylesheets().add(this.getClass().getResource("basecontrols.css").toExternalForm());        
         
-        TabToolbarControl tabtoolbarcontrol = new TabToolbarControl();
+        TabToolbarApp tabtoolbarcontrol = new TabToolbarApp();
         root.getChildren().add(tabtoolbarcontrol);
         
         primaryStage.setScene(scene);

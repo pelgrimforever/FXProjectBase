@@ -6,7 +6,7 @@ package base.framework.widget;
 import base.config.Config;
 import base.config.TXT;
 import base.config.Widgettxt;
-import base.config.menu.Menutabpanelconfig;
+import base.config.menu.Tabpanelconfig;
 import java.util.HashMap;
 import java.util.Iterator;
 import javafx.beans.property.BooleanProperty;
@@ -24,8 +24,8 @@ import javafx.scene.layout.StackPane;
 public abstract class WidgetBase extends StackPane {
     
     //XML & config
-    protected Menutabpanelconfig controlconfig;
-    public void setConfig(Menutabpanelconfig controlconfig) {
+    protected Tabpanelconfig controlconfig;
+    public void setConfig(Tabpanelconfig controlconfig) {
         this.controlconfig = controlconfig;
         base = new Base(controlconfig.getWidgetconfig());
         String iconpath = Config.getConfigmap() + controlconfig.getIcon();
@@ -34,9 +34,9 @@ public abstract class WidgetBase extends StackPane {
     }
     
     /**
-     * @return Menutabpanelconfig
+     * @return Tabpanelconfig
      */
-    public Menutabpanelconfig getConfig() { return controlconfig; }
+    public Tabpanelconfig getConfig() { return controlconfig; }
     protected Base base;
 
     //control
@@ -63,6 +63,9 @@ public abstract class WidgetBase extends StackPane {
         setWidgetstyleClass(defaultstyleClass);
     }
 
+    /**
+     * widget load, replaces normal constructor
+     */
     public abstract void load();
     
 }

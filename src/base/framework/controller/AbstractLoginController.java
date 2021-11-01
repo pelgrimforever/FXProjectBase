@@ -19,8 +19,8 @@ public abstract class AbstractLoginController {
     
     /**
      * add eventhandler (subscribe)
-     * @param objectid
-     * @param eventhandler 
+     * @param objectid subscriber id
+     * @param eventhandler Subscribeer object
      */
     public void setLoginEventHandler(String objectid, EventHandler<Event> eventhandler) {
         eventhandlers.put(objectid, eventhandler);

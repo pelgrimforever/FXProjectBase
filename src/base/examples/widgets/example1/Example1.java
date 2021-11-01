@@ -10,7 +10,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 /**
- *
+ * Demo Widget
  * @author Franky Laseure
  */
 public class Example1 extends WidgetBase {
@@ -20,20 +20,6 @@ public class Example1 extends WidgetBase {
     private Controller controller = new Controller();
     
     //event listeners
-    private EventHandler buttoneditactionevent = new EventHandler<ActionEvent>() {
-        @Override public void handle(ActionEvent e) {
-/*            Button button = (Button)e.getSource();
-            Creatordata creatordata = (Creatordata)button.getUserData();
-            if(creatordata==null) {
-                controller.setCreator(controller.createnewCreator());
-                controller.setNewcreatorflag(true);
-            } else {
-                controller.setCreator(creatordata);
-                controller.setNewcreatorflag(false);
-            }
-            AppController.openPopupStage(controller.getCreator().getCreatorid(), new Creatoredit(controller, widgettxt));*/
-        }
-    };
     
     //data listeners
 

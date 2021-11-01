@@ -1,5 +1,5 @@
 /*
- * Menutabpanelconfig.java
+ * Tabpanelconfig.java
  */
 package base.config.menu;
 
@@ -14,7 +14,7 @@ import org.jdom2.Element;
  * Menu tab panel settings for pre-defined menu in FXProjectBase
  * @author Franky Laseure
  */
-public class Menutabpanelconfig extends Menutabcontrolconfig {
+public class Tabpanelconfig extends Tabcontrolconfig {
     
     public Element getWidgetconfig() { return configxml; }
     
@@ -28,10 +28,10 @@ public class Menutabpanelconfig extends Menutabcontrolconfig {
     
     /**
      * constructor
-     * @param menutabpanelconfig
-     * @throws XMLException 
+     * @param menutabpanelconfig xml element for menutabpanel
+     * @throws XMLException Exception reading the file
      */
-    public Menutabpanelconfig(Element menutabpanelconfig) throws XMLException {
+    public Tabpanelconfig(Element menutabpanelconfig) throws XMLException {
         super(menutabpanelconfig);
         controltype = TYPE_PANEL;
         if(configxml.getChild("id")!=null) {

@@ -27,12 +27,12 @@ public class Menutabconfig {
     public final void setLabel(String value){label.set(value);}
     public StringProperty labelProperty() {return label;}
 
-    private ArrayList<Menutabcontrolconfig> controlconfigs = new ArrayList<Menutabcontrolconfig>();
-    public ArrayList<Menutabcontrolconfig> getControlconfigs() { return controlconfigs; }
+    private ArrayList<Tabcontrolconfig> controlconfigs = new ArrayList<Tabcontrolconfig>();
+    public ArrayList<Tabcontrolconfig> getControlconfigs() { return controlconfigs; }
 
     /**
      * constructor
-     * @param menutabelement 
+     * @param menutabelement xml element for menu tab
      */
     public Menutabconfig(Element menutabelement) {
         this.menutabelement = menutabelement;
@@ -43,9 +43,9 @@ public class Menutabconfig {
     
     /**
      * Menu tab GUI elements
-     * @param controlconfig 
+     * @param controlconfig Tabcontrolconfig
      */
-    public void addControlconfig(Menutabcontrolconfig controlconfig) {
+    public void addControlconfig(Tabcontrolconfig controlconfig) {
         controlconfigs.add(controlconfig);
     }
     

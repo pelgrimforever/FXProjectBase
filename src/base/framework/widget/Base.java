@@ -21,7 +21,7 @@ public class Base {
     
     /**
      * constructor, set XML root Element
-     * @param xmlroot 
+     * @param xmlroot widget XML root element
      */
     public Base(Element xmlroot) {
         root = xmlroot;

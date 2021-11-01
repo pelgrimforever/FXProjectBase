@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.numberpicker;
 
 import javafx.beans.property.IntegerProperty;
@@ -15,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
+ * Form Number picker
  * @author Franky Laseure
  */
 public class NumberPicker extends VBox {
@@ -60,10 +56,21 @@ public class NumberPicker extends VBox {
     private static final int width = 30;
     private static final int buttonheight = 10;
     
+    /**
+     * constructor
+     * default values:
+     * - min: 0
+     * - max: 100
+     */
     public NumberPicker() {
         this(0, 100);
     }
 
+    /**
+     * constructor
+     * @param min minimum numeric value
+     * @param max maximum numeric value
+     */
     public NumberPicker(int min, int max) {
         setMin(min);
         if(max>min) { setMax(max); }

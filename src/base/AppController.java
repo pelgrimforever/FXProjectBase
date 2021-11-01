@@ -33,7 +33,7 @@ public class AppController {
     
     /**
      * show message in Popup Message window
-     * @param message 
+     * @param message text message
      */
     public static void showMessage(String message) {
         MessageWindow mw = new MessageWindow(message);

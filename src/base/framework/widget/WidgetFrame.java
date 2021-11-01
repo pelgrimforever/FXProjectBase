@@ -4,7 +4,7 @@
 package base.framework.widget;
 
 import base.config.UIsettings;
-import base.config.menu.Menutabpanelconfig;
+import base.config.menu.Tabpanelconfig;
 import base.controls.CrosslineIconbox;
 import base.controls.TwoStateIconbox;
 import base.controls.WaitIconbox;
@@ -41,7 +41,7 @@ public class WidgetFrame extends BorderPane {
 
     /**
      * send event to all subscribers
-     * @param event 
+     * @param event WidgetEvent constant
      */
     protected void triggerevents(Event event) {
         Iterator<EventHandler<Event>> eventhandlersI = eventhandlers.values().iterator();
@@ -78,7 +78,7 @@ public class WidgetFrame extends BorderPane {
     };
     
     //Control
-    private Menutabpanelconfig controlconfig;
+    private Tabpanelconfig controlconfig;
     private WidgetBase widget;
     public WidgetBase getWidget() { return widget; }
     private boolean fullscreen = false;
@@ -98,10 +98,10 @@ public class WidgetFrame extends BorderPane {
     /**
      * constructor
      * the widget Component is here instantiated and loaded into the WidgetFrame
-     * @param controlconfig Menutabpanelconfig
-     * @throws WidgetException 
+     * @param controlconfig Tabpanelconfig
+     * @throws WidgetException All exceptions are thrown as a WidgetException
      */
-    public WidgetFrame(Menutabpanelconfig controlconfig) throws WidgetException {
+    public WidgetFrame(Tabpanelconfig controlconfig) throws WidgetException {
         this.self = this;
         this.controlconfig = controlconfig;
         this.getStyleClass().add(style);
@@ -111,17 +111,10 @@ public class WidgetFrame extends BorderPane {
                 widget.setConfig(controlconfig);
                 widget.load();
             }
-            catch(ClassNotFoundException e) {
-                throw new WidgetException(e);
-            }
-            catch(InstantiationException e) {
-                throw new WidgetException(e);
-            }
-            catch(IllegalAccessException e) {
+            catch(ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                 throw new WidgetException(e);
             }
         }
-//TOP        
         //TOP controls
         iconbox = new WaitIconbox(widget.icon, widget.defaultimagesize);
         iconbox.waitingProperty().bind(widget.waitingProperty());
@@ -154,7 +147,7 @@ public class WidgetFrame extends BorderPane {
         
         top.getChildren().addAll(title, buttonpanel);
         
-//WidgetFrame
+        //WidgetFrame
         this.setTop(top);
         this.setCenter(widget);
         this.requestLayout();

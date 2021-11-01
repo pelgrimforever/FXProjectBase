@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.datepicker;
 
 import java.sql.Date;
@@ -15,7 +11,7 @@ import javafx.scene.layout.HBox;
 import text.Conversion;
 
 /**
- *
+ * Form Date field
  * @author Franky Laseure
  */
 public class DateField extends HBox {
@@ -44,6 +40,9 @@ public class DateField extends HBox {
     private TextField datetext = new TextField();
     private SimpleCalendar calendar = new SimpleCalendar();
     
+    /**
+     * constructor
+     */
     public DateField() {
         //controls
         datetext.setEditable(false);

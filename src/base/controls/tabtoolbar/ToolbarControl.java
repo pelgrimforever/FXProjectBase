@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.tabtoolbar;
 
 import base.config.UIsettings;
@@ -13,13 +9,19 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 /**
- *
+ * ToolbarControl
+ * superclass for Toolbar GUI classes
  * @author Franky Laseure
  */
 public abstract class ToolbarControl extends GridPane {
 
     private Text labeltext = new Text();
 
+    /**
+     * constructor
+     * @param id control id
+     * @param label control label
+     */
     public ToolbarControl(String id, StringProperty label) {
         //grid
         setId(id);

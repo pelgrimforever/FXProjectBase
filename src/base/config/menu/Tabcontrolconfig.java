@@ -1,5 +1,5 @@
 /*
- * Menutabcontrolconfig.java
+ * Tabcontrolconfig.java
  */
 package base.config.menu;
 
@@ -12,7 +12,7 @@ import org.jdom2.Element;
  * Menu tab controls settings for pre-defined menu in FXProjectBase
  * @author Franky Laseure
  */
-public class Menutabcontrolconfig {
+public class Tabcontrolconfig {
     
     protected Element configxml;
 
@@ -47,9 +47,9 @@ public class Menutabcontrolconfig {
     
     /**
      * constructor
-     * @param menutabcontrolelement 
+     * @param menutabcontrolelement xml element for menutabcontrol
      */
-    public Menutabcontrolconfig(Element menutabcontrolelement) {
+    public Tabcontrolconfig(Element menutabcontrolelement) {
         this.configxml = menutabcontrolelement;
         //initialise constants
         labelname.setValue(configxml.getChildText("id"));

@@ -48,7 +48,7 @@ public class Iconbox extends ImageView {
     
     /**
      * change icon size
-     * @param iconheight 
+     * @param iconheight image display height
      */
     public void setIconsize(double iconheight) {
         iconsize = iconheight;

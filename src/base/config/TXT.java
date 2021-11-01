@@ -104,12 +104,17 @@ public class TXT {
      * @return label translation
      */
     public static String getText(String name) {
-        return root.getChild(name).getValue();
+        Element textelement = root.getChild(name);
+        if(textelement==null) {
+            return "*****";
+        } else {
+            return textelement.getValue();
+        }
     }
 
     /**
      * get component element with attribute id = componentid
-     * @param componentid
+     * @param componentid component id used in translation xml
      * @return XML element
      */
     public static Componenttxt getComponenttxt(String componentid) {
@@ -118,7 +123,7 @@ public class TXT {
 
     /**
      * get widget element with attribute id = widgetid
-     * @param widgetid
+     * @param widgetid widget id used in translation xml
      * @return XML element
      */
     public static Widgettxt getWidgettxt(String widgetid) {

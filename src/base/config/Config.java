@@ -157,7 +157,7 @@ public class Config {
      * read XML file
      * @param xmlfile file path
      * @return XML Document
-     * @throws XMLException 
+     * @throws XMLException Exceptions reading xml file are thrown as XMLException
      */
     public static Document readXML(String xmlfile) throws XMLException {
         Document xmldoc = null;
@@ -170,11 +170,8 @@ public class Config {
                 xmldoc = saxbuilder.build(new File(configmap + xmlfile));
             }
         }
-        catch(JDOMException jde) {
+        catch(JDOMException | IOException jde) {
             throw new XMLException(jde);
-        }
-        catch(IOException ioe) {
-            throw new XMLException(ioe);
         }
         return xmldoc;
     }

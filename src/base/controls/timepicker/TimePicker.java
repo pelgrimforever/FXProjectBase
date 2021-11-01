@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.timepicker;
 
 import base.controls.numberpicker.NumberPicker;
@@ -19,7 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 /**
- *
+ * Time Picker control
  * @author Franky Laseure
  */
 public class TimePicker extends HBox {
@@ -50,6 +46,9 @@ public class TimePicker extends HBox {
     //listeners
     private boolean ignoreevents = false;
     
+    /**
+     * ChangeListener for time picker control
+     */
     private ChangeListener<Time> timechanged = new ChangeListener<Time>() {
         @Override public void changed(ObservableValue<? extends Time> o, Time oldVal, Time newVal){
             if(!ignoreevents) {
@@ -64,7 +63,10 @@ public class TimePicker extends HBox {
             }
         }
     };
-        
+
+    /**
+     * ChangeListener for the hour, min and sec textboxes
+     */
     private ChangeListener<Number> digitchanged = new ChangeListener<Number>() {
         @Override public void changed(ObservableValue<? extends Number> o, Number oldVal, Number newVal){
             if(!ignoreevents) {
@@ -73,12 +75,18 @@ public class TimePicker extends HBox {
         }
     };
     
+    /**
+     * construct time from hour, min and sec
+     */
     private void createtime() {
         Calendar cal = Calendar.getInstance();
         cal.set(0, 0, 0, getHour(), getMin(), getSec());
         time.set(new Time(cal.getTimeInMillis()));
     }
     
+    /**
+     * set hour, min and sec from time picker
+     */
     private void setTime() {
         ignoreevents = true;
         Calendar cal = Calendar.getInstance();
@@ -94,6 +102,9 @@ public class TimePicker extends HBox {
     private NumberPicker minpicker = new NumberPicker(0, 59);
     private NumberPicker secpicker = new NumberPicker(0, 59);
     
+    /**
+     * constructor
+     */
     public TimePicker() {
         
         //data listeners

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.tabtoolbar;
 
 import base.config.UIsettings;
@@ -18,7 +14,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
+ * Toolbar Button
+ * ToolbarControl implentation as Button
  * @author Franky Laseure
  */
 
@@ -29,10 +26,25 @@ public class ToolbarButton extends ToolbarControl {
     
     private double imagesize = defaultimagesize;
     
+    /**
+     * constructor
+     * @param id button id
+     * @param label button label
+     * @param iconpath button icon path
+     * @param panelbuttonselected EventHandler for button
+     */
     public ToolbarButton(String id, StringProperty label, String iconpath, EventHandler panelbuttonselected) {
         this(id, label, iconpath, panelbuttonselected, defaultimagesize);
     }
-    
+
+    /**
+     * constructor
+     * @param id button id
+     * @param label button label
+     * @param iconpath button icon path
+     * @param panelbuttonselected EventHandler for button
+     * @param size image size (square)
+     */
     public ToolbarButton(String id, StringProperty label, String iconpath, EventHandler panelbuttonselected, double size) {
         //configure control
         super("TOOLBARBUTTON" + id, label);

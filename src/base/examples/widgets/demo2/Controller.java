@@ -1,7 +1,7 @@
-package base.examples.widgets.demo1;
+package base.examples.widgets.demo2;
 
 /**
- * Demo controller
+ * Demo Controller
  * @author Franky Laseure
  */
 public class Controller {

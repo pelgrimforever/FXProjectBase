@@ -20,12 +20,12 @@ public class Menuconfig {
     private static Document configxml = null;
 
     private static ArrayList<Menutabconfig> menutabconfigs = new ArrayList();
-    private static ArrayList<Menutabcontrolconfig> menutabcontrolconfigs = new ArrayList();
+    private static ArrayList<Tabcontrolconfig> menutabcontrolconfigs = new ArrayList();
     
     /**
      * initialize menu settings
      * @param xml menu xml
-     * @throws XMLException 
+     * @throws XMLException Exception while reading XML file
      */
     public static void initialize(Document xml) throws XMLException {
         configxml = xml;
@@ -39,19 +39,19 @@ public class Menuconfig {
         
         Element tabcontrol;
         Iterator<Element> menutabcontrols = root.getChild("tabcontrol").getChildren().iterator();
-        Menutabcontrolconfig menutabcontrolconfig;
+        Tabcontrolconfig menutabcontrolconfig;
         //add controls config for each menutab
         while(menutabcontrols.hasNext()) {
             menutabcontrolconfig = null;
             tabcontrol = menutabcontrols.next();
             String controltype = tabcontrol.getName();
-            if(controltype.equals(Menutabcontrolconfig.TYPE_PANEL)) {
-                menutabcontrolconfig = new Menutabpanelconfig(tabcontrol);
+            if(controltype.equals(Tabcontrolconfig.TYPE_PANEL)) {
+                menutabcontrolconfig = new Tabpanelconfig(tabcontrol);
             }
-            if(controltype.equals(Menutabcontrolconfig.TYPE_ACTION)) {
+            if(controltype.equals(Tabcontrolconfig.TYPE_ACTION)) {
 
             }
-            if(controltype.equals(Menutabcontrolconfig.TYPE_TABCONTROL)) {
+            if(controltype.equals(Tabcontrolconfig.TYPE_TABCONTROL)) {
 
             }
             if(menutabcontrolconfig!=null) {

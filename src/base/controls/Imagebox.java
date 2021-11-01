@@ -33,8 +33,8 @@ public class Imagebox extends ImageView {
     /**
      * constructor, set image and override width and height
      * @param image Image
-     * @param width
-     * @param height 
+     * @param width image display width
+     * @param height image display height
      */
     public Imagebox(Image image, double width, double height) {
         this.height = height;

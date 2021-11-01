@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.tabtoolbar;
 
 import javafx.beans.property.StringProperty;
@@ -12,20 +8,28 @@ import javafx.scene.layout.BorderPane;
 
 
 /**
- *
+ * TabPane with a Toolbar as content
  * @author Franky Laseure
  */
 public class TabToolbar extends TabPane {
     
     public static final String style = "tabtoolbar";
     
-    //http://docs.oracle.com/javafx/2/deployment/javafx_javascript.htm#BCEBGCGD
+    /**
+     * constructor
+     */
     public TabToolbar() {
         this.setSide(Side.TOP);
         this.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         this.getStyleClass().add(style);
     }    
     
+    /**
+     * add new Tabl to the TabPane
+     * @param controlname Tab control name
+     * @param label Tab label
+     * @return Tab
+     */
     public Tab addTab(String controlname, StringProperty label) {
         Tab tab = new Tab();
         tab.getStyleClass().add(style);

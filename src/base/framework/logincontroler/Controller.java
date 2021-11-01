@@ -73,6 +73,9 @@ public class Controller extends AbstractLoginController {
         }
     }
     
+    /**
+     * log user out
+     */
     public void logout() {
         getData().setPassword("");
         Securitycheck.logout();
@@ -80,11 +83,17 @@ public class Controller extends AbstractLoginController {
         triggerevents(event);
     }
     
+    /**
+     * show register form
+     */
     public void gotoRegisterform() {
         ControllerEvent event = new ControllerEvent(ControllerEvent.BUTTONREGISTEREVENT);
         super.triggerevents(event);
     }
     
+    /**
+     * send user registration to server
+     */
     public void register() {
         registerService registerservice = new registerService();
         registerservice.data = getData();
@@ -100,6 +109,9 @@ public class Controller extends AbstractLoginController {
         registerservice.start();
     }
 
+    /**
+     * async Service: register
+     */
     private static class registerService extends Service<Boolean> {
         public Data data;
         protected Task createTask() {

@@ -50,6 +50,11 @@ public class Loginpanel extends StackPane {
     
     /**
      * Login Form action
+     * - ControllerEvent.BUTTONREGISTEREVENT show register form
+     * - ControllerEvent.BUTTONLOGINEVENT show login form
+     * - ControllerEvent.LOGOUTEVENT show login form
+     * - ControllerEvent.LOGINEVENT server login callback action
+     * - ControllerEvent.REGISTEREVENT show user register form
      */
     private EventHandler logineventhandler = new EventHandler<ControllerEvent>() {
         @Override public void handle(ControllerEvent e) {
@@ -81,6 +86,13 @@ public class Loginpanel extends StackPane {
         }
     };
     
+    /**
+     * show selected form
+     * - LOGIN: loginform
+     * - REGISTER: registerform
+     * - USER: userview
+     * @param formconstant 
+     */
     public void showform(byte formconstant) {
         loginform.setVisible(LOGIN == formconstant);
         registerform.setVisible(REGISTER == formconstant);

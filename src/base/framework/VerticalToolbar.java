@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.framework;
 
 import base.config.Config;
-import base.config.menu.Menutabpanelconfig;
+import base.config.menu.Tabpanelconfig;
 import base.controls.RotateIconbox;
 import base.framework.widget.WidgetFrame;
 import java.util.HashMap;
@@ -21,7 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 /**
- *
+ * Vertical toolbar, showing loaded widgets
  * @author Franky Laseure
  */
 public class VerticalToolbar extends VBox {
@@ -32,6 +28,9 @@ public class VerticalToolbar extends VBox {
     
     private HashMap<String, SequentialTransition> buttonanimations = new HashMap<String, SequentialTransition>();
     
+    /**
+     * constructor
+     */
     public VerticalToolbar() {
         this.getStyleClass().add(style);
         this.setStyle(style);
@@ -39,9 +38,13 @@ public class VerticalToolbar extends VBox {
         this.setPrefWidth(iconsize + 20);
     }
     
-    
+    /**
+     * add widget button
+     * @param widgetframe WidgetFrame control
+     * @param activebuttonevent EventHandler linked to the widget activation button
+     */
     public void addButton(WidgetFrame widgetframe, EventHandler activebuttonevent) {
-        Menutabpanelconfig controlconfig = widgetframe.getWidget().getConfig();
+        Tabpanelconfig controlconfig = widgetframe.getWidget().getConfig();
         String buttonid = "AB" + controlconfig.getLabelname();
         
         //check if button is already in toolbar
@@ -62,12 +65,21 @@ public class VerticalToolbar extends VBox {
         }
     }
     
+    /**
+     * remove Widget button from toolbar
+     * @param widgetframe WidgetFrame control
+     */
     public void deleteButton(WidgetFrame widgetframe) {
-        Menutabpanelconfig controlconfig = widgetframe.getWidget().getConfig();
+        Tabpanelconfig controlconfig = widgetframe.getWidget().getConfig();
         String buttonid = "AB" + controlconfig.getLabelname();
         this.getChildren().remove(getButton(buttonid));
     }
     
+    /**
+     * get button with id
+     * @param buttonid button id
+     * @return RotateIconbox
+     */
     private RotateIconbox getButton(String buttonid) {
         Iterator buttons = this.getChildren().iterator();
         RotateIconbox button = null;

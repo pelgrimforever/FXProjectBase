@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package base.controls.popupwindow;
 
 import base.config.Componenttxt;
@@ -19,7 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- *
+ * Popup Message
  * @author Franky Laseure
  */
 public class MessageWindow extends Stage {
@@ -36,7 +32,11 @@ public class MessageWindow extends Stage {
             self.close();
         }
     };
-    
+ 
+    /**
+     * constructor, shows message as popup
+     * @param message text
+     */
     public MessageWindow(String message) {
         self = this;
         this.initModality(Modality.APPLICATION_MODAL);
