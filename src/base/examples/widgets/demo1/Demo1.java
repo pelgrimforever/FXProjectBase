@@ -2,11 +2,11 @@ package base.examples.widgets.demo1;
 
 import base.controls.DIRFilter;
 import base.controls.FILEFilter;
+import base.controls.popupwindow.MessageWindow;
 import base.framework.widget.WidgetBase;
 import java.io.File;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -53,6 +53,11 @@ public class Demo1 extends WidgetBase {
         }
     };
 
+    private EventHandler messagebuttonactionevent = new EventHandler<ActionEvent>() {
+        @Override public void handle(ActionEvent e) {
+            new MessageWindow(message.getText());
+        }
+    };
     //data listeners
 
     //controls
@@ -67,6 +72,7 @@ public class Demo1 extends WidgetBase {
     
     private TextField directorytextbox = new TextField();
     private TextField filetextbox = new TextField();
+    private TextField message = new TextField();
     
     @Override
     public void load() {
@@ -81,6 +87,10 @@ public class Demo1 extends WidgetBase {
         xmlbutton.setOnAction(filebuttonactionevent);
         filetextbox.setPrefColumnCount(50);
         
+        HBox messagepanel = new HBox();
+        Button messagebutton = new Button(widgettxt.txt("BUTTON_MESSAGEWINDOW"));
+        messagebutton.setOnAction(messagebuttonactionevent);
+        messagepanel.getChildren().addAll(message, messagebutton);
 
         //layout
         ScrollPane listpanel = new ScrollPane();
@@ -88,7 +98,7 @@ public class Demo1 extends WidgetBase {
         directorypanel.getChildren().addAll(directorybutton, directorytextbox);
         filepanel.getChildren().addAll(xmlbutton, filetextbox);
         
-        contentbox.getChildren().addAll(directorypanel, filepanel);
+        contentbox.getChildren().addAll(directorypanel, filepanel, messagepanel);
         
         listpanel.setContent(contentbox);
         listpanel.setPrefSize(2000, 1500);
